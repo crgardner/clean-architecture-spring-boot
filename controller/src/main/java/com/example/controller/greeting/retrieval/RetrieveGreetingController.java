@@ -20,11 +20,10 @@ public class RetrieveGreetingController {
     public ResponseEntity<Object> getGreeting(@PathVariable("id") Long id) {
         var responseWriter = new ResponseEntityResponseWriter();
         var presenter = new RetrieveGreetingPresenter(responseWriter);
-
         var useCase = useCaseFactory.create(new RetrieveGreetingRequest(id), presenter);
 
         useCase.execute();
-        ResponseEntity<Object> responseEntity = responseWriter.getResponseEntity();
-        return responseEntity;
+
+        return responseWriter.getResponseEntity();
     }
 }
