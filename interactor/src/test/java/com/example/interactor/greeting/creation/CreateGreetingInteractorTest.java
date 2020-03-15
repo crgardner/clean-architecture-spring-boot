@@ -12,7 +12,7 @@ import com.example.domain.greeting.*;
 import com.example.usecase.greeting.creation.*;
 import com.example.usecase.greeting.shared.GreetingData;
 
-@DisplayName("Create Greeting Interactor")
+@DisplayName("CreateGreetingInteractor")
 @ExtendWith(MockitoExtension.class)
 class CreateGreetingInteractorTest implements CreateGreetingResponder {
     @Mock
