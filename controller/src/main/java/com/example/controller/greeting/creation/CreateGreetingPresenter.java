@@ -18,9 +18,11 @@ public class CreateGreetingPresenter implements CreateGreetingResponder {
     }
 
     private GreetingResource createGreetingResource(CreateGreetingResponse response) {
-        return new GreetingResource(response.id(),
-                                    response.greetingText(),
-                                    response.originator());
+        var data = response.data();
+        
+        return new GreetingResource(data.id(),
+                                    data.greetingText(),
+                                    data.originator());
     }
 
 }

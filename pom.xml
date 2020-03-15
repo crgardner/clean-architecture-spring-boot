@@ -30,6 +30,7 @@
 		<java.version>11</java.version>
 		<junit.jupiter.version>5.6.0</junit.jupiter.version>
 		<assertj.version>3.15.0</assertj.version>
+		<mockito.version>3.3.3</mockito.version>
 	</properties>
 
 	<dependencies>
@@ -46,6 +47,10 @@
 					<groupId>org.junit.vintage</groupId>
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>org.assertj</groupId>
+					<artifactId>assertj-core</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 
@@ -60,6 +65,13 @@
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
 			<version>${assertj.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version><!--$NO-MVN-MAN-VER$ -->
 			<scope>test</scope>
 		</dependency>
 
