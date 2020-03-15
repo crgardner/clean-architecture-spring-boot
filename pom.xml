@@ -20,6 +20,9 @@
 	<modules>
 		<module>main</module>
 		<module>controller</module>
+		<module>usecase</module>
+		<module>interactor</module>
+		<module>domain</module>
 	</modules>
 
 	<properties>
