@@ -1,4 +1,4 @@
-package com.example.main.transaction;
+package com.example.application.transaction;
 
 import com.example.usecase.concept.UseCase;
 

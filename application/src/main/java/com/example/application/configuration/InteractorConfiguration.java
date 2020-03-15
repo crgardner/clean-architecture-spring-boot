@@ -1,4 +1,4 @@
-package com.example.main.configuration;
+package com.example.application.configuration;
 
 import java.util.function.UnaryOperator;
 
