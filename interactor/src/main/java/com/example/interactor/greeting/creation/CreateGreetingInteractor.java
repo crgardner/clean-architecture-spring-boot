@@ -6,23 +6,29 @@ import com.example.usecase.greeting.creation.*;
 
 class CreateGreetingInteractor implements UseCase {
 
+    private final GreetingGateway greetingGateway;
     private final CreateGreetingRequest request;
     private final CreateGreetingResponder responder;
 
-    CreateGreetingInteractor(CreateGreetingRequest request, CreateGreetingResponder responder) {
+    CreateGreetingInteractor(GreetingGateway greetingGateway, CreateGreetingRequest request, CreateGreetingResponder responder) {
+        this.greetingGateway = greetingGateway;
         this.request = request;
         this.responder = responder;
     }
 
     @Override
     public void execute() {
-        var greeting = createGreeting();
+        var greeting = save(createGreeting());
 
         responder.accept(createGreetingResponseFrom(greeting));
     }
 
     private Greeting createGreeting() {
         return new Greeting(request.greetingText(), new Person(request.originator()));
+    }
+
+    private Greeting save(Greeting greeting) {
+        return greetingGateway.save(greeting);
     }
 
     private CreateGreetingResponse createGreetingResponseFrom(Greeting greeting) {

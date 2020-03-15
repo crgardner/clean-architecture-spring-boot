@@ -23,6 +23,7 @@
 		<module>usecase</module>
 		<module>interactor</module>
 		<module>domain</module>
+		<module>persistence</module>
 	</modules>
 
 	<properties>
